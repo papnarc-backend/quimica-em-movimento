@@ -1,6 +1,6 @@
 /* Offline app cache. Scoped to the project directory. */
 const PREFIX = 'quimica-movimento-' + new URL(self.registration.scope).pathname + '-';
-const CACHE = PREFIX + 'esterification-20261012';
+const CACHE = PREFIX + 'esterification-refresh-20261012';
 const ASSETS = ["./", "./index.html", "./manifest.webmanifest", "./assets/icon.svg", "./assets/icon.svg"];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
@@ -11,7 +11,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET' || !event.request.url.startsWith(self.registration.scope)) return;
   if (event.request.mode === 'navigate') {
-    event.respondWith(fetch(event.request).then(response => {
+    event.respondWith(fetch(event.request, {cache:'no-store'}).then(response => {
       if (response.ok) { const copy=response.clone(); event.waitUntil(caches.open(CACHE).then(c=>c.put('./index.html',copy))); }
       return response;
     }).catch(() => caches.match('./index.html')));
