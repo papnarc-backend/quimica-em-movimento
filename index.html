@@ -283,7 +283,7 @@
   window.addEventListener('appinstalled',()=>{$('#install').hidden=true;toast('Aplicativo instalado. Bons estudos!');});
   window.addEventListener('hashchange',route);
   window.addEventListener('storage',e=>{if(e.key===key){try{saved=e.newValue?validateSave(JSON.parse(e.newValue)):{version:1,completed:[],history:[],motion:true};render();}catch(_){}}});
-  if('serviceWorker' in navigator && ['https:','http:'].includes(location.protocol))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+  if('serviceWorker' in navigator && ['https:','http:'].includes(location.protocol))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=esterification-20261012',{updateViaCache:'none'}).catch(()=>{}));
   route();
 })();
 </script>
