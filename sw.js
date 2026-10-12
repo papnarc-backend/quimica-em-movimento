@@ -1,6 +1,6 @@
 /* Offline app cache. Scoped to the project directory. */
 const PREFIX = 'quimica-movimento-' + new URL(self.registration.scope).pathname + '-';
-const CACHE = PREFIX + '1ac57f81b4be';
+const CACHE = PREFIX + 'esterification-20261012';
 const ASSETS = ["./", "./index.html", "./manifest.webmanifest", "./assets/icon.svg", "./assets/icon.svg"];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
