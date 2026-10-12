@@ -1,0 +1,9 @@
+QUÍMICA EM MOVIMENTO
+Um projeto educativo de Paulo Vicente Rocha Pinto
+
+1. Abra index.html em seu navegador ou publique esta pasta no GitHub Pages.
+2. Comece em Reações ilustradas ou siga as Trilhas de estudo.
+
+O aplicativo inclui reações ilustradas, laboratório virtual, cálculos, desafios e progresso salvo neste navegador. O pacote não precisa de instalação de dependências.
+
+Para publicar: envie os arquivos desta pasta para a raiz de um repositório GitHub e ative GitHub Pages em Settings → Pages, usando a branch main e a pasta /(root).
